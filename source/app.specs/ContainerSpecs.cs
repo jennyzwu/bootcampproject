@@ -18,10 +18,10 @@ namespace app.specs
     public class when_observation_name : concern
     {
 
-      Because b = () =>
-        result = sut.an<>()
+	  //Because b = () =>
+	  //  result = sut.an<>()
 
-      It first_observation = () =>        
+	  //It first_observation = () =>        
         
     }
   }
