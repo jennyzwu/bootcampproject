@@ -1,0 +1,9 @@
+config = 
+{
+  :has_iis_express => true,
+  :iis_express => 'c:\utils\iis_express\iisexpress.exe',
+  :browser => 'C:\utils\firefox\firefox.exe',
+  :our_setting => 'This is a setting',
+  :start_url => "http://localhost:8080/blah.iqmetrix",
+}
+configatron.configure_from_hash config
