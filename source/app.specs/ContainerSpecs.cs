@@ -15,14 +15,27 @@ namespace app.specs
     }
 
    
-    public class when_observation_name : concern
-    {
+    //public class when_fetching_contract_implementation : concern
+    //{
+    //    private Establish c = () =>
+    //        {
+    //            depends.on<IFindContractI>()
+    //        };
 
-	  //Because b = () =>
-	  //  result = sut.an<>()
+    //    Because b = () =>
+    //                        result = sut.an<IAmAContract>();
 
-	  //It first_observation = () =>        
-        
-    }
+    //    It should_first_observation = () =>
+    //        {
+    //            result.ShouldBeTheSameAs(contractImplementor);
+    //        };
+
+    //    private static IAmAContract result;
+    //    private static IAmAContract contractImplementor;
+    //}
   }
+
+    internal interface IAmAContract
+    {
+    }
 }
