@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using app.web.core;
 
 namespace app.utility.service_locator
@@ -7,19 +8,27 @@ namespace app.utility.service_locator
   public class Container :IFindDependencies
   {
       private readonly IMapDependencies _dependencyMapping;
+      private readonly IFindContractDependencies _dependencies;
 
-      public Container(IMapDependencies dependencyMapping)
+      public Container(IMapDependencies dependencyMapping,IFindContractDependencies dependencies)
       {
           _dependencyMapping = dependencyMapping;
+          _dependencies = dependencies;
       }
 
-    public TDependency an<TDependency>()
-    {
-        var type = _dependencyMapping.get<TDependency>();
+      private object create(Type contractType)
+      {
+          var implementationType = _dependencyMapping.get(contractType);
+          var requiredDependencies = _dependencies.get_required_dependencies(implementationType);
+          var dependants = requiredDependencies.Select(create).ToArray();
+          
+          return Activator.CreateInstance(implementationType, dependants);
+      }
 
 
-
-        return (TDependency)Activator.CreateInstance(type);
+      public TDependency an<TDependency>()
+      {
+          return (TDependency) create(typeof (TDependency));
     }
   }
 }
