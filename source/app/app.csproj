@@ -80,6 +80,8 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="utility\service_locator\Container.cs" />
     <Compile Include="utility\service_locator\Dependencies.cs" />
+    <Compile Include="utility\service_locator\IMapDependencies.cs" />
+    <Compile Include="web\core\DependencyMapping.cs" />
     <Compile Include="utility\service_locator\IFindDependencies .cs" />
     <Compile Include="utility\service_locator\IResolveTheContainerConfiguredAtStartup.cs" />
     <Compile Include="web\core\aspnet\ICreateAspxPageInstances.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="web\core\IProcessOneRequest.cs" />
     <Compile Include="web\core\IProcessRequests.cs" />
     <Compile Include="web\core\ISupportAUserFeature .cs" />
+    <Compile Include="web\core\ReflectionBasedContractDependenciesFinder.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
