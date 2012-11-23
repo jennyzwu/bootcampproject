@@ -1,4 +1,6 @@
-﻿namespace app.web.core.aspnet
+﻿using System.Web;
+
+namespace app.web.core.aspnet
 {
   public class WebFormsDisplayEngine : IDisplayInformation
   {
@@ -11,6 +13,10 @@
       this.current_request_resolution = current_request_resolution;
     }
 
+  	public WebFormsDisplayEngine() : this(new ViewFactory(), () => HttpContext.Current )
+  	{
+  		
+  	}
     public void display<PresentationModel>(PresentationModel model)
     {
       view_factory.create_view_that_can_render(model).ProcessRequest(current_request_resolution());
