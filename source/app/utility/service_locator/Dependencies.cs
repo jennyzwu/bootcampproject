@@ -5,7 +5,7 @@ namespace app.utility.service_locator
 {
     public static class Dependencies
     {
-        public static IResolveTheContainerConfiguredAtStartup resolution = (d) =>
+        public static IResolveTheContainerConfiguredAtStartup resolution = () =>
             {
                 throw new NotImplementedException("This needs to be configured by a startup process");
             };
@@ -15,7 +15,7 @@ namespace app.utility.service_locator
         {
             get
             {
-                return resolution(_dictionary);
+                return resolution();
             }
         }
 
@@ -25,9 +25,6 @@ namespace app.utility.service_locator
 
 
 
-        public static void map<TContract>(Type concreteType)
-        {
-            _dictionary.Add(typeof (TContract), concreteType);
-        }
+      
     }
 }

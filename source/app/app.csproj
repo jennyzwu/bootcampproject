@@ -80,6 +80,8 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="utility\service_locator\Container.cs" />
     <Compile Include="utility\service_locator\Dependencies.cs" />
+    <Compile Include="utility\service_locator\IMapDependencies.cs" />
+    <Compile Include="web\core\DependencyMapping.cs" />
     <Compile Include="utility\service_locator\IFindDependencies .cs" />
     <Compile Include="utility\service_locator\IResolveTheContainerConfiguredAtStartup.cs" />
     <Compile Include="web\core\aspnet\ICreateAspxPageInstances.cs" />

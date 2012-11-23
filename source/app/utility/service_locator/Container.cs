@@ -1,15 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using app.web.core;
 
 namespace app.utility.service_locator
 {
-  public class Container :IFindDependencies,
+  public class Container :IFindDependencies
   {
-      private  readonly Dictionary<Type, Type> _dictionary = new Dictionary<Type, Type>();
+      private readonly IMapDependencies _dependencyMapping;
+
+      public Container(IMapDependencies dependencyMapping)
+      {
+          _dependencyMapping = dependencyMapping;
+      }
 
     public TDependency an<TDependency>()
     {
-        return _dictionary[typeof (TDependency)];
+        var type = _dependencyMapping.get<TDependency>();
+
+
+
+        return (TDependency)Activator.CreateInstance(type);
     }
   }
 }

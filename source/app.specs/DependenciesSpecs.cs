@@ -18,7 +18,7 @@ namespace app.specs
       Establish c = () =>
       {
         resolution_service = fake.an<IFindDependencies>();
-        IResolveTheContainerConfiguredAtStartup resolution = (d) => resolution_service;
+        IResolveTheContainerConfiguredAtStartup resolution = () => resolution_service;
 
         spec.change(() => Dependencies.resolution).to(resolution);
       };
