@@ -16,6 +16,11 @@ namespace app.web.core.stubs
     	{
     	  return Activator.CreateInstance<ModelData>();
     	}
+
+    	public bool is_good_for(string route)
+    	{
+    		throw new NotImplementedException();
+    	}
     }
   }
 }

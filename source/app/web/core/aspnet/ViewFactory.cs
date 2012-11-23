@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.web.core.stubs;
 
 namespace app.web.core.aspnet
 {
@@ -13,6 +14,11 @@ namespace app.web.core.aspnet
       this.template_registry = view_registry;
     }
 
+	public ViewFactory()
+		: this((path, type) => { return null; }, new StubPathRegistry())
+	{
+
+	}
     public IHttpHandler create_view_that_can_render<PresentationModel>(PresentationModel data)
     {
       var view =

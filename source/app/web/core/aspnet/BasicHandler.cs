@@ -15,10 +15,14 @@ namespace app.web.core.aspnet
       this.request_factory = request_factory;
     }
 
-    public BasicHandler():this(Dependencies.fetch.an<IProcessRequests>(),
-                               Dependencies.fetch.an<ICreateControllerRequests>())
-    {
-    }
+  	public BasicHandler():this(new FrontController(), new ControllerFactory() )
+  	{
+  			
+  	}
+	//public BasicHandler():this(Dependencies.fetch.an<IProcessRequests>(),
+	//  Dependencies.fetch.an<ICreateControllerRequests>())
+	//{
+	//}
 
     public void ProcessRequest(HttpContext context)
     {
