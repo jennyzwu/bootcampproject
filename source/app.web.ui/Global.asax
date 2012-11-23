@@ -6,8 +6,7 @@
 
     void Application_Start(object sender, EventArgs e)
     {
-        var container = new Container(new DependencyMapping());
-        
+        var container = new Container(new DependencyMapping(), new ReflectionBasedContractDependenciesFinder());
         
         Dependencies.resolution = ()=> container;
     }

@@ -9,7 +9,6 @@ namespace app.utility.service_locator
             {
                 throw new NotImplementedException("This needs to be configured by a startup process");
             };
-
         
         public static IFindDependencies fetch
         {
@@ -18,13 +17,5 @@ namespace app.utility.service_locator
                 return resolution();
             }
         }
-
-
-
-
-
-
-
-      
     }
 }

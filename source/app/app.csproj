@@ -115,6 +115,7 @@
     <Compile Include="web\core\IProcessOneRequest.cs" />
     <Compile Include="web\core\IProcessRequests.cs" />
     <Compile Include="web\core\ISupportAUserFeature .cs" />
+    <Compile Include="web\core\ReflectionBasedContractDependenciesFinder.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
